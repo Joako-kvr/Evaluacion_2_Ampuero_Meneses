@@ -23,7 +23,7 @@ fun RegistroScreen(ViewModel: FormularioViewModel){
     var nombre by remember { mutableStateOf("") }
     var contrasena by remember { mutableStateOf("") }
 
-    val usuarios by viewModel.cargarUsuarios()
+    //val usuarios by viewModel.cargarUsuarios()
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -50,7 +50,7 @@ fun RegistroScreen(ViewModel: FormularioViewModel){
         Button(
             onClick = {
                 if(nombre.isNotBlank() && contrasena.isNotBlank()){
-                    viewModel.AgregarUsuario(nombre, contrasena) }
+                  view
                 nombre = ""
                 contrasena=""
                 }

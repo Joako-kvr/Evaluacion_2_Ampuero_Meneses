@@ -16,13 +16,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
+import com.example.evaluacion_2_ampuero_meneses.ui.theme.viewmodel.FormularioViewModel
 
 @Composable
-fun RegistroScreen(viewModel: ViewModel? = null){
+fun RegistroScreen(ViewModel: FormularioViewModel){
     var nombre by remember { mutableStateOf("") }
     var contrasena by remember { mutableStateOf("") }
 
+    val usuarios by viewModel.cargarUsuarios()
 
     Column(
         verticalArrangement = Arrangement.Center,
@@ -49,7 +50,7 @@ fun RegistroScreen(viewModel: ViewModel? = null){
         Button(
             onClick = {
                 if(nombre.isNotBlank() && contrasena.isNotBlank()){
-
+                    viewModel.AgregarUsuario(nombre, contrasena) }
                 nombre = ""
                 contrasena=""
                 }

@@ -1,3 +1,11 @@
 package com.example.evaluacion_2_ampuero_meneses.model
 
-data class Producto()
+
+import androidx.room.Entity
+
+@Entity
+data class Producto(
+    val id : Int,
+    val nombre:String,
+    val contrasena: String
+)

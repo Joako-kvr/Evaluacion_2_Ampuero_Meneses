@@ -1,11 +1,13 @@
 package com.example.evaluacion_2_ampuero_meneses.model
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName="usuario")
 
 data class Usuario(
-    val id : Int,
+    @PrimaryKey(autoGenerate = true)
+    val id : Int = 0,
     val nombre:String,
     val contrasena: String
 )
